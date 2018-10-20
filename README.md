@@ -47,7 +47,8 @@ YMMV and of course, there is always a risk using any non Ubiquiti approved/test 
 ### Setup initial configuration
 Using the network description above, here is a working example:
 
-Run configure
+Run:
+    configure
     set service bcast-relay id 1 description 'Play-Fi listener'
     set service bcast-relay id 1 interface eth0.5
     set service bcast-relay id 1 interface eth0.6
@@ -71,9 +72,10 @@ This generates a configuration stanza like this:
     }
 
 
-### Remove configureation
+### Remove configuration
 
-Run configure
+Run:
+    configure
     delete service bcast-relay
     commit
     save
