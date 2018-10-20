@@ -31,7 +31,7 @@ YMMV and of course, there is always a risk using any non Ubiquiti approved/test 
 
 ## Installation
 
-* upload install_ubnt_bcast_relay.v1.1 to your router
+* Copy install_ubnt_bcast_relay.v1.1 to your EdgeOS device:
 
         curl -o /tmp/install_ubnt_bcast_relay.v1.1.tgz https://raw.githubusercontent.com/britannic/ubnt-bcast-relay/master/install_ubnt_bcast_relay.v1.1.tgz
         cd /tmp
@@ -42,12 +42,15 @@ YMMV and of course, there is always a risk using any non Ubiquiti approved/test 
 
 ## Removal
 
+* Repeat the steps above and when prompted chose menu option #2 to remove.
+
 ## Configuration
 
 ### Setup initial configuration
 Using the network description above, here is a working example:
 
 Run:
+
     configure
     set service bcast-relay id 1 description 'Play-Fi listener'
     set service bcast-relay id 1 interface eth0.5
@@ -75,6 +78,7 @@ This generates a configuration stanza like this:
 ### Remove configuration
 
 Run:
+
     configure
     delete service bcast-relay
     commit
