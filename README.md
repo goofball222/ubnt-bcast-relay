@@ -33,11 +33,12 @@ YMMV and of course, there is always a risk using any non Ubiquiti approved/test 
 
 * Use the following commands to copy install_ubnt_bcast_relay.v1.1 to your EdgeOS device and run it:
 
-    curl -o /tmp/install_ubnt_bcast_relay.v1.1.tgz https://raw.githubusercontent.com/britannic/ubnt-bcast-relay/master/install_ubnt_bcast_relay.v1.1.tgz
-    cd /tmp
-    sudo tar zxvf ./install_ubnt_bcast_relay.v1.1.tgz
-    sudo bash ./install_ubnt_bcast_relay.v1.1
-
+```bash
+curl -o /tmp/install_ubnt_bcast_relay.v1.1.tgz https://raw.githubusercontent.com/britannic/ubnt-bcast-relay/master/install_ubnt_bcast_relay.v1.1.tgz
+cd /tmp
+sudo tar zxvf ./install_ubnt_bcast_relay.v1.1.tgz
+sudo bash ./install_ubnt_bcast_relay.v1.1
+```
 
 * To install select option #1 when prompted
 
@@ -52,40 +53,43 @@ Using the network description above, here is a working example:
 
 Run:
 
-    configure
-    set service bcast-relay id 1 description 'Play-Fi listener'
-    set service bcast-relay id 1 interface eth0.5
-    set service bcast-relay id 1 interface eth0.6
-    set service bcast-relay id 1 port 10102
-    commit
-    save
-    exit
-
+```bash
+configure
+set service bcast-relay id 1 description 'Play-Fi listener'
+set service bcast-relay id 1 interface eth0.5
+set service bcast-relay id 1 interface eth0.6
+set service bcast-relay id 1 port 10102
+commit
+save
+exit
+```
 
 This generates a configuration stanza like this:
 
-    service {
-        bcast-relay {
-            id 1 {
-                description "Play-Fi listener"
-                interface eth0.5
-                interface eth0.6
-                port 10102
-            }
+```bash
+service {
+    bcast-relay {
+        id 1 {
+            description "Play-Fi listener"
+            interface eth0.5
+            interface eth0.6
+            port 10102
         }
     }
-
+}
+```
 
 ### Remove configuration
 
 Run:
 
-    configure
-    delete service bcast-relay
-    commit
-    save
-    exit
-
+```bash
+configure
+delete service bcast-relay
+commit
+save
+exit
+```
 
 #### To clone UBNT Broadcast Relay:
 * git clone https://github.com/britannic/ubnt-bcast-relay.git
