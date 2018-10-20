@@ -4,17 +4,17 @@ export COPYFILE_DISABLE=true
 
 VERSION='1.1'
 NAME='ubnt_bcast_relay'
-#DROPBOX='/Users/Neil/Dropbox/EdgeMax'
-#BCAST="${NAME}.${VERSION}."
 INSTALL="install_${NAME}.v${VERSION}"
 PAYLOAD='payload'
 
 if [[ -e "${0##*/}" ]]; then
 	BASEDIR="$(pwd)"
-#	[[ -f ${BCAST}setup.tgz ]] && rm ${BCAST}setup.tgz
+	[[ -f ${INSTALL}.tgz ]] && rm ${INSTALL}.tgz
+
 	cd ${PAYLOAD}
 	echo ${VERSION} > version
 	tar zcf ../${PAYLOAD}.tgz --exclude='._*' --exclude='.svn' --exclude='.DS_Store' --exclude='*.bak' --exclude='*~' ./*
+
 	cd ..
 
 	if [[ -e ${PAYLOAD}.tgz ]]; then
@@ -27,11 +27,10 @@ if [[ -e "${0##*/}" ]]; then
 	chmod 0755 ${INSTALL}
 	tar zcf ${INSTALL}.tgz ${INSTALL}
 	echo "${INSTALL} created"
-#	[[ -d "${DROPBOX}/" ]] && install -m 0755 ${INSTALL}.tgz "${DROPBOX}/"
-#	tar -zcf ../${BCAST}setup.tgz --exclude='._*' --exclude='.svn' --exclude='.DS_Store' --exclude='*.bak' --exclude='*~' "${BASEDIR}"/*
-#	mv ../${BCAST}setup.tgz "${BASEDIR}"/
 
-#	[[ ${1} ]] && /usr/bin/scp "${BASEDIR}"/${INSTALL} ${1}@scratch:/tmp/${INSTALL}
+# Clean up so we're not pushing unneeded files to GitHub
+	rm install_ubnt_bcast_relay.v1.1 payload.tgz
+
 else
 	echo "$(basename $0) must be run in the directory where it is located."
 fi
