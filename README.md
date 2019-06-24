@@ -34,7 +34,7 @@ YMMV and of course, there is always a risk using any non Ubiquiti approved/test 
 * Use the following commands to copy install_ubnt_bcast_relay.v1.1 to your EdgeOS device and run it:
 
 ```bash
-curl -o /tmp/install_ubnt_bcast_relay.v1.1.tgz https://raw.githubusercontent.com/britannic/ubnt-bcast-relay/master/install_ubnt_bcast_relay.v1.1.tgz
+curl -o /tmp/install_ubnt_bcast_relay.v1.1.tgz https://raw.githubusercontent.com/goofball222/ubnt-bcast-relay/master/install_ubnt_bcast_relay.v1.1.tgz
 cd /tmp
 sudo tar zxvf ./install_ubnt_bcast_relay.v1.1.tgz
 sudo bash ./install_ubnt_bcast_relay.v1.1
@@ -92,5 +92,5 @@ exit
 ```
 
 #### To clone UBNT Broadcast Relay:
-* git clone https://github.com/britannic/ubnt-bcast-relay.git
+* git clone https://github.com/goofball222/ubnt-bcast-relay.git
 
